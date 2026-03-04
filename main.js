@@ -15,12 +15,28 @@ document.addEventListener("DOMContentLoaded", function () {
 function nextStep() {
     if (!steps.length) return;
 
+   
+    const currentInputs = steps[currentStep].querySelectorAll("input, textarea");
+    let allValid = true;
+
+    currentInputs.forEach(input => {
+        if (!input.checkValidity() || input.value.trim() === "") {
+            allValid = false;
+        }
+    });
+
+    if (!allValid) {
+        alert("Please fill in all required fields correctly before continuing!");
+        const firstInvalid = steps[currentStep].querySelector(":invalid");
+        if (firstInvalid) firstInvalid.focus();
+        return; 
+    }
+
+ 
     steps[currentStep].classList.remove("active");
     currentStep++;
 
-    if (currentStep >= steps.length) {
-        currentStep = steps.length - 1;
-    }
+    if (currentStep >= steps.length) currentStep = steps.length - 1;
 
     steps[currentStep].classList.add("active");
     updateProgress();
@@ -187,3 +203,21 @@ function logout() {
 function refreshPage() {
     location.reload();
 }
+const themeToggle = document.getElementById("themeToggle");
+
+// Load saved theme from localStorage
+if (localStorage.getItem("theme") === "dark") {
+    document.body.classList.add("dark-theme");
+    themeToggle.checked = true;
+}
+
+// Toggle dark/light theme on change
+themeToggle.addEventListener("change", () => {
+    if (themeToggle.checked) {
+        document.body.classList.add("dark-theme");
+        localStorage.setItem("theme", "dark");
+    } else {
+        document.body.classList.remove("dark-theme");
+        localStorage.setItem("theme", "light");
+    }
+});

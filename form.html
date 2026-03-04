@@ -10,10 +10,17 @@
 <nav class="navbar">
     <div class="logo">
         <div class="logo-icon"></div>
-        <span>MyProfile</span>
     </div>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="form.html">Register</a></li>
+        <li><a href="profile.html">Profile</a></li>
+    </ul>
+    <label class="switch">
+  <input type="checkbox" id="themeToggle">
+  <span class="slider"></span>
+</label>
 </nav>
-
 <div id="greetModal" class="modal">
     <div class="modal-content">
         <h2>Hello! What is your name?</h2>
@@ -32,7 +39,7 @@
 
         <div class="step active">
             <h2 id="helloName">Welcome!</h2>
-            <input type="email" id="email" placeholder="Email" required>
+           <input type="email" id="email" placeholder="Email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Please enter a valid email">
             <input type="password" id="password" placeholder="Password" required>
             <button type="button" onclick="nextStep()">Continue</button>
         </div>
