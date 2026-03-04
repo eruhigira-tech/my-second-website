@@ -205,13 +205,13 @@ function refreshPage() {
 }
 const themeToggle = document.getElementById("themeToggle");
 
-// Load saved theme from localStorage
+
 if (localStorage.getItem("theme") === "dark") {
     document.body.classList.add("dark-theme");
     themeToggle.checked = true;
 }
 
-// Toggle dark/light theme on change
+
 themeToggle.addEventListener("change", () => {
     if (themeToggle.checked) {
         document.body.classList.add("dark-theme");
