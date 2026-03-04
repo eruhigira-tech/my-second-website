@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="logo">
+        <div class="logo-icon"></div>
+        <span>MyProfile</span>
+    </div>
+</nav>
+
+<div id="greetModal" class="modal">
+    <div class="modal-content">
+        <h2>Hello! What is your name?</h2>
+        <input type="text" id="modalName" placeholder="Enter your name">
+        <button type="button" onclick="submitModalName()">Continue</button>
+    </div>
+</div>
+
+<section class="form-wrapper">
+
+    <div class="progress-bar">
+        <div id="progress"></div>
+    </div>
+
+    <form id="multiStepForm">
+
+        <div class="step active">
+            <h2 id="helloName">Welcome!</h2>
+            <input type="email" id="email" placeholder="Email" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <button type="button" onclick="nextStep()">Continue</button>
+        </div>
+
+        
+        <div class="step">
+            <h2>About You</h2>
+            <textarea id="bio" placeholder="Tell us about yourself..."></textarea>
+            <input type="text" id="hobby" placeholder="Your main hobby">
+            <button type="button" onclick="nextStep()">Continue</button>
+        </div>
+
+       
+        <div class="step">
+            <h2>Favorite Movies</h2>
+            <div id="moviesContainer">
+                <input type="text" class="movieInput" placeholder="Favorite Movie">
+            </div>
+            <button type="button" onclick="addMovie()">Add Another Movie</button>
+            <button type="button" onclick="nextStep()">Continue</button>
+        </div>
+
+        
+        <div class="step">
+            <h2>Favorite Team</h2>
+            <input type="text" id="team" placeholder="Favorite Premier League Team">
+            <button type="button" onclick="nextStep()">Continue</button>
+        </div>
+
+       
+        <div class="step">
+            <h2>Favorite Websites</h2>
+            <div id="sitesContainer">
+                <input type="url" class="siteInput" placeholder="https://example.com">
+            </div>
+            <button type="button" onclick="addSite()">Add Another Site</button>
+            <button type="button" onclick="showReview()">Review</button>
+        </div>
+
+        <div class="step">
+            <h2>Review Your Information</h2>
+            <div id="reviewContent" style="text-align:left;"></div>
+            <button type="button" onclick="saveUser()">Save & Finish</button>
+        </div>
+
+    </form>
+
+</section>
+
+<script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Profile</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="logo">
+        <div class="logo-icon"></div>
+        <span>MyProfile</span>
+    </div>
+</nav>
+
+<section class="profile-container" id="profilePage">
+
+    <h1 id="greeting"></h1>
+
+    <div class="accordion card">
+        <button class="accordion-btn">Email</button>
+        <div class="accordion-content"><p id="emailDisplay"></p></div>
+    </div>
+
+    <div class="accordion card">
+        <button class="accordion-btn">Bio</button>
+        <div class="accordion-content"><p id="bioDisplay"></p></div>
+    </div>
+
+    <div class="accordion card">
+        <button class="accordion-btn">Hobby</button>
+        <div class="accordion-content"><p id="hobbyDisplay"></p></div>
+    </div>
+
+    <div class="accordion card">
+        <button class="accordion-btn">Favorite Movies</button>
+        <div class="accordion-content"><ul id="moviesList"></ul></div>
+    </div>
+
+    <div class="accordion card">
+        <button class="accordion-btn">Favorite Team</button>
+        <div class="accordion-content"><p id="teamDisplay"></p></div>
+    </div>
+
+    <div class="accordion card">
+        <button class="accordion-btn">Favorite Websites</button>
+        <div class="accordion-content"><ul id="sitesList"></ul></div>
+    </div>
+
+    <button onclick="logout()">Logout</button>
+    <button onclick="refreshPage()">Refresh</button>
+
+</section>
+
+<script src="main.js"></script>
+</body>
+</html>
